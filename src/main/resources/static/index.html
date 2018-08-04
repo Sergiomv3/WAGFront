@@ -1,10 +1,69 @@
-<!DOCTYPE HTML>
-<html>
-<head> 
-    <title>erving Web Content</title>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+    <title>WordsAanagramGenerator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link type="text/css" href="css/full.css" rel="stylesheet" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
+
 <body>
-    <p>Get your anagrams <a href="/anagram">here</a></p>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Words Anagrams Generator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="swal({title: 'Words Anagrams Generator',text: 'Developed by Sergio Martin',icon: 'info',button: 'Close',});">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+
+
+<div class="container" style="border-radius: 3px; margin-top: 100px; background: #0009; color: white; padding-top: 10px; padding-bottom: 10px; text-align: center">
+    <div class="row">
+        <div class="col-lg">
+            <form action="/anagram" method="get">
+                Word: <input type="text" pattern="[A-Za-z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" name="word" style="background: #fff3;border: 0px; height: 30px; color: white; padding-left: 10px; border-radius: 3px;">
+                </input>
+                <input type="submit" value="Get anagrams!" /></td>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
