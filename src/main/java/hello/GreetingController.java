@@ -9,15 +9,16 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class GreetingController {
 
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+    @GetMapping("/anagram")
+    public String greeting(@RequestParam(name="word") String word, Model model) {
 
-        String url = "http://localhost:8081/anagram?word=" + name;
+        String url = "http://localhost:8081/anagram?word=" + word;
 
         RestTemplate restTemplate = new RestTemplate();
         AnagramDTO dto = restTemplate.getForObject(url, AnagramDTO.class);
 
-        model.addAttribute("name", dto.toString());
+        model.addAttribute("word", dto.getWord());
+        model.addAttribute("anagrams", dto.getListOfAnagrams().toString());
 
         return "greeting";
     }
