@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package controller;
+package com.martin.anagram.controller;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

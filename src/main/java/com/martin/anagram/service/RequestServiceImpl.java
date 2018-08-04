@@ -1,16 +1,16 @@
-package service;
+package com.martin.anagram.service;
 
-import dto.AnagramDTO;
-import interfaces.GetRequestService;
+import com.martin.anagram.dto.AnagramDTO;
+import com.martin.anagram.interfaces.RequestService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-/** Implements the inteface GetRequestService and returns the response of Rest service
+/** Implements the inteface RequestService and returns the response of Rest com.martin.anagram.service
  * @author Sergio Martin
  * @version 1.0
  */
-@Service("getRequestService")
-public class GetRequestServiceImpl implements GetRequestService {
+@Service("requestService")
+public class RequestServiceImpl implements RequestService {
 
     /*The constant url for get request*/
     public static final String HTTP_LOCALHOST_8081_ANAGRAM_WORD = "http://localhost:8081/anagram?word";
