@@ -22,7 +22,7 @@ public class AnagramController {
         model.addAttribute("word", dto.getWord());
         model.addAttribute("anagrams", dto.getListOfAnagrams().toString());
 
-        return "anagram";
+        return "anagram.html";
     }
 
 }
